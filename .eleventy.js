@@ -1,4 +1,5 @@
 const addRemoteData = require( "@aaashur/eleventy-plugin-add-remote-data" );
+const markdown = require( "./src/_eleventy/config/markdown" );
 
 /* eslint-disable-next-line valid-jsdoc */
 /**
@@ -21,10 +22,24 @@ module.exports = ( eleventyConfig ) =>
 		eleventyConfig.addDataExtension( key, require( value ) );
 	} );
 
+
+	/* Filters */
+	const { filters } = require( "./src/_eleventy/filters" );
+	Object.entries( filters ).forEach( ( [key, value] ) =>
+	{
+		eleventyConfig.addFilter( key, require( value ) );
+	} );
+
+
+	/* Markdown */
+	eleventyConfig.setLibrary( "md", markdown );
+
+
 	/* Plugins */
 	eleventyConfig.addPlugin( addRemoteData, {
 		data: {},
 	} );
+
 
 	return {
 		dir: {

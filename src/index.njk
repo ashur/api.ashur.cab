@@ -9,7 +9,10 @@ layout: layouts/base.html.njk
 			<div class="stack">
 				<dt><a href="{{ endpoint.url }}">{{ endpoint.url }}</a></dt>
 				<dd>
-					<span>{{ endpoint.data.description }}</span>
+					{%- if endpoint.data.description -%}
+						{{ endpoint.data.description | renderMarkdown | safe }}
+					{%- endif -%}
+
 					<span class="metadata">Updated {{ endpoint.page.date.toLocaleString('en-US', {
 						year: "numeric",
 						month: "short",
