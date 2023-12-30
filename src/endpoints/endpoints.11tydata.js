@@ -2,7 +2,6 @@ module.exports = {
 	date: "git Last Modified",
 	layout: "layouts/endpoint.njk",
 	published: new Date(),
-	tags: ["endpoints"],
 
 	eleventyComputed: {
 		permalink: ( data ) =>
