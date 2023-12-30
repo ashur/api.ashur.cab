@@ -1,4 +1,5 @@
 module.exports = {
+	published: new Date(),
 	robots: [
 		"CCBot",
 		"ChatGPT-User",
@@ -6,5 +7,4 @@ module.exports = {
 		"Google-Extended",
 		"GPTBot",
 	],
-	updated: new Date(),
 };
