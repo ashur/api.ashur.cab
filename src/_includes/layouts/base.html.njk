@@ -7,6 +7,8 @@
 
 	<style>
 		body {
+			background-color: #fafafa;
+			color: #444;
 			font-family: system-ui, sans-serif;
 			line-height: 1.5;
 			margin: 0;
@@ -31,11 +33,17 @@
 		dl .metadata {
 			display: block;
 			margin-top: 0.5em;
-			opacity: 0.5;
+			opacity: 0.66;
 		}
 
 		dd {
 			line-height: inherit;
+		}
+
+		dd code {
+			background-color: color-mix(in hsl, currentcolor 5%, currentcolor 0%);
+			font-family: inherit;
+			font-size: inherit;
 		}
 
 		dt {
@@ -54,6 +62,10 @@
 
 		.stack > * + * {
 			margin-top: var(--space-stack, 1em);
+		}
+
+		.stack-lg > * + * {
+			margin-top: var(--space-stack-lg, 2em);
 		}
 	</style>
 </head>
