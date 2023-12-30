@@ -7,6 +7,8 @@
 
 	<style>
 		body {
+			--border: solid color-mix(in hsl, currentcolor 12%, currentcolor 0%) 2px;
+
 			color: #444;
 			font-family: system-ui, sans-serif;
 			line-height: 1.5;
@@ -20,7 +22,7 @@
 		}
 
 		dl a {
-			border-bottom: solid color-mix(in hsl, currentcolor 12%, currentcolor 0%) 2px;
+			border-bottom: var(--border);
 			color: inherit;
 			text-decoration: none;
 		}
@@ -30,9 +32,9 @@
 		}
 
 		dl .metadata {
+			color: teal;
 			display: block;
 			margin-top: 0.5em;
-			opacity: 0.66;
 		}
 
 		dd {
@@ -54,9 +56,19 @@
 			margin-block: 1em;
 		}
 
+		hr {
+			border: none;
+			border-top: var(--border);
+			margin-block: 2rem;
+		}
+
 		main {
 			margin-inline: auto;
 			max-width: 64ch;
+		}
+
+		p:has(small) {
+			line-height: 1.2;
 		}
 
 		.stack > * + * {

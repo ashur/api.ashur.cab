@@ -4,23 +4,32 @@ layout: layouts/base.html.njk
 <main>
 	<h1>{{ site.title }}</h1>
 	<dl class="stack-lg">
-	{%- for endpoint in collections.endpoints -%}
-		{%- if not endpoint.data.private -%}
-			<div class="stack">
-				<dt><a href="{{ endpoint.url }}">{{ endpoint.url }}</a></dt>
-				<dd>
-					{%- if endpoint.data.description -%}
-						{{ endpoint.data.description | renderMarkdown | safe }}
-					{%- endif -%}
+		{%- set privateCount = 0 -%}
+		{%- for endpoint in collections.endpoints -%}
+			{%- if not endpoint.data.private -%}
+				<div class="stack">
+					<dt><a href="{{ endpoint.url }}">{{ endpoint.url }}</a></dt>
+					<dd>
+						{%- if endpoint.data.description -%}
+							{{ endpoint.data.description | renderMarkdown | safe }}
+						{%- endif -%}
 
-					<span class="metadata">Updated {{ endpoint.page.date.toLocaleString('en-US', {
-						year: "numeric",
-						month: "short",
-						day: "numeric"
-					} ) }}</span>
-				</dd>
-			</div>
-		{%- endif -%}
-	{%- endfor -%}
+						<span class="metadata">Updated {{ endpoint.page.date.toLocaleString('en-US', {
+							year: "numeric",
+							month: "short",
+							day: "numeric"
+						} ) }}</span>
+					</dd>
+				</div>
+			{%- else -%}
+				{%- set privateCount = privateCount + 1 -%}
+			{%- endif -%}
+		{%- endfor -%}
 	</dl>
+
+	{%- if privateCount > 0 -%}
+		<hr>
+		<p><small>There {{ "is" if privateCount == 1 else "are" }} {{ privateCount }} private {{ "endpoint" if privateCount == 1 else "endpoints" }} in addition to those listed above.</small></p>
+	{%- endif -%}
 </main>
+
