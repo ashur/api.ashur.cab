@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ site.title }}</title>
+
+	<style>
+		body {
+			font-family: system-ui, sans-serif;
+			line-height: 1.5;
+			margin: 0;
+			padding: 2rem;
+		}
+
+		dl {
+			font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+			margin-block: 0;
+		}
+
+		dl a {
+			color: inherit;
+		}
+
+		dd {
+			line-height: inherit;
+		}
+
+		dt {
+			font-weight: 600;
+		}
+
+		main {
+			margin-inline: auto;
+			max-width: 72ch;
+		}
+
+		.stack > * + * {
+			margin-top: var(--space-stack, 1em);
+		}
+	</style>
+</head>
+<body>
+	{{ content | safe }}
+</body>
+</html>

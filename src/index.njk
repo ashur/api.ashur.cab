@@ -1,0 +1,16 @@
+---
+layout: layouts/base.html.njk
+---
+<main>
+	<h1>{{ site.title }}</h1>
+	<dl>
+	{%- for endpoint in collections.endpoints -%}
+		{%- if not endpoint.data.private -%}
+			<div class="stack">
+				<dt><a href="{{ endpoint.url }}">{{ endpoint.url }}</a></dt>
+				<dd>{{ endpoint.data.description }}</dd>
+			</div>
+		{%- endif -%}
+	{%- endfor -%}
+	</dl>
+</main>
