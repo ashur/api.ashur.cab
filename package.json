@@ -1,5 +1,5 @@
 {
-  "name": "robots.txt",
+  "name": "api.ashur.cab",
   "version": "1.0.0",
   "scripts": {
     "build": "eleventy",
