@@ -1,3 +1,5 @@
+const addRemoteData = require( "@aaashur/eleventy-plugin-add-remote-data" );
+
 /* eslint-disable-next-line valid-jsdoc */
 /**
  * @param {import("@11ty/eleventy/src/UserConfig")} eleventyConfig
@@ -9,6 +11,12 @@ module.exports = ( eleventyConfig ) =>
 	Object.entries( dataExtensions ).forEach( ( [key, value] ) =>
 	{
 		eleventyConfig.addDataExtension( key, require( value ) );
+	} );
+
+	/* Plugins */
+	eleventyConfig.addPlugin( addRemoteData, {
+		data: {
+		},
 	} );
 
 	return {
