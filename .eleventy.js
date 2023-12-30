@@ -7,6 +7,12 @@ const robots = require( "./src/robots.txt.js" );
 module.exports = ( eleventyConfig ) =>
 {
 	eleventyConfig.addGlobalData( "robots", robots );
+	/* Data Extensions */
+	const { dataExtensions } = require( "./src/_eleventy/dataExtensions" );
+	Object.entries( dataExtensions ).forEach( ( [key, value] ) =>
+	{
+		eleventyConfig.addDataExtension( key, require( value ) );
+	} );
 
 	return {
 		dir: {
