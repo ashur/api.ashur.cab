@@ -6,7 +6,10 @@ module.exports = {
 	eleventyComputed: {
 		permalink: ( data ) =>
 		{
-			return `/${data.page.fileSlug}.json`;
+			const { page } = data;
+
+			const pathname = page.filePathStem.replace( "/endpoints", "" );
+			return `/${pathname}.json`;
 		},
 	},
 };
