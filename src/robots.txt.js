@@ -6,5 +6,7 @@ module.exports = {
 		"FacebookBot",
 		"Google-Extended",
 		"GPTBot",
+		"Omgili",
+		"Omgilibot",
 	],
 };
