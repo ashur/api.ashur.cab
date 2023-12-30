@@ -10,7 +10,7 @@
 			font-family: system-ui, sans-serif;
 			line-height: 1.5;
 			margin: 0;
-			padding: 2rem;
+			padding: min(3rem, 8vw);
 		}
 
 		dl {
@@ -19,7 +19,13 @@
 		}
 
 		dl a {
+			border-bottom: solid color-mix(in hsl, currentcolor 12%, currentcolor 0%) 2px;
 			color: inherit;
+			text-decoration: none;
+		}
+
+		dl a:hover {
+			border-bottom-color: color-mix(in hsl, currentcolor 25%, currentcolor 0%);
 		}
 
 		dd {
@@ -30,9 +36,14 @@
 			font-weight: 600;
 		}
 
+		h1 {
+			font-weight: 600;
+			margin-block: 1em;
+		}
+
 		main {
 			margin-inline: auto;
-			max-width: 72ch;
+			max-width: 64ch;
 		}
 
 		.stack > * + * {

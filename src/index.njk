@@ -3,7 +3,7 @@ layout: layouts/base.html.njk
 ---
 <main>
 	<h1>{{ site.title }}</h1>
-	<dl>
+	<dl class="stack">
 	{%- for endpoint in collections.endpoints -%}
 		{%- if not endpoint.data.private -%}
 			<div class="stack">
