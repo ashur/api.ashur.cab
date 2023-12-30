@@ -15,8 +15,7 @@ module.exports = ( eleventyConfig ) =>
 
 	/* Plugins */
 	eleventyConfig.addPlugin( addRemoteData, {
-		data: {
-		},
+		data: {},
 	} );
 
 	return {
