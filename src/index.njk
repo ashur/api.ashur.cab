@@ -35,7 +35,7 @@ layout: layouts/base.html.njk
 
 	{%- if privateCount > 0 -%}
 		<hr>
-		<p><small>There {{ "is" if privateCount == 1 else "are" }} {{ privateCount }} additional private {{ "endpoint" if privateCount == 1 else "endpoints" }} which can be accessed directly. See source repo for URLs.</small></p>
+		<p><small>There {{ "is" if privateCount == 1 else "are" }} {{ privateCount }} additional private {{ "endpoint" if privateCount == 1 else "endpoints" }} which can be accessed directly. See <a href="{{ pkg.repository.url }}">source repo</a> for URLs.</small></p>
 	{%- endif -%}
 </main>
 
