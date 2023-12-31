@@ -13,5 +13,13 @@ module.exports = ( collectionApi ) =>
 				: b.url > a.url
 					? -1
 					: 0;
+		} )
+		.sort( ( a, b ) =>
+		{
+			return a.data.deprecated && !b.data.deprecated
+				? 1
+				: !a.data.deprecated && b.data.deprecated
+					? -1
+					: 0;
 		} );
 };
