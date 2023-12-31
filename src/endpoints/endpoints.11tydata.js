@@ -39,6 +39,8 @@ module.exports = {
 
 			payload.deprecated = deprecated;
 			payload.updated = page.date;
+			payload.url = new URL( data.site.url );
+			payload.url.pathname = permalink;
 			payload.version = version;
 
 			return payload;
