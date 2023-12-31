@@ -8,9 +8,10 @@
 	<style>
 		body {
 			--border: solid color-mix(in hsl, currentcolor 12%, currentcolor 0%) 2px;
+			--ff-sans: system-ui, sans-serif;
 
 			color: #444;
-			font-family: system-ui, sans-serif;
+			font-family: var(--ff-sans);
 			line-height: 1.5;
 			margin: 0;
 			padding: min(3rem, 8vw);
@@ -34,11 +35,13 @@
 		dl .metadata {
 			color: teal;
 			display: block;
+			font-size: 0.875em;
 			margin-top: 0.5em;
 		}
 
 		dd {
 			line-height: inherit;
+			margin-inline-start: 2em;
 		}
 
 		dd code {
@@ -48,7 +51,7 @@
 		}
 
 		dt {
-			font-weight: 600;
+			font-weight: 700;
 		}
 
 		h1 {
@@ -71,12 +74,22 @@
 			line-height: 1.2;
 		}
 
+		.badge {
+			background-color: blanchedalmond;
+			border-radius: 0.5em;
+			color: sienna;
+			font-size: 0.875em;
+			font-weight: normal;
+			padding-block: 0.25em;
+			padding-inline: 0.5em;
+		}
+
 		.stack > * + * {
 			margin-top: var(--space-stack, 1em);
 		}
 
 		.stack-lg > * + * {
-			margin-top: var(--space-stack-lg, 2em);
+			margin-top: var(--space-stack-lg, 2.5em);
 		}
 	</style>
 </head>
