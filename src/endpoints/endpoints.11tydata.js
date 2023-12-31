@@ -16,7 +16,7 @@ module.exports = {
 
 		response: ( data ) =>
 		{
-			const { page, permalink, response, version } = data;
+			const { deprecated, page, permalink, response, version } = data;
 
 			if ( !permalink )
 			{
@@ -37,6 +37,7 @@ module.exports = {
 				payload = { ...response };
 			}
 
+			payload.deprecated = deprecated;
 			payload.updated = page.date;
 			payload.version = version;
 
