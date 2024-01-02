@@ -4,9 +4,9 @@ layout: layouts/base.html.njk
 <main>
 	<h1>{{ site.title }}</h1>
 	<dl class="stack-lg">
-		{%- set privateCount = 0 -%}
+		{%- set unlistedCount = 0 -%}
 		{%- for endpoint in collections.endpoints -%}
-			{%- if not endpoint.data.private -%}
+			{%- if not endpoint.data.unlisted -%}
 				<div class="stack">
 					<dt>
 						<a href="{{ endpoint.url }}">{{ endpoint.url }}</a>
@@ -28,14 +28,14 @@ layout: layouts/base.html.njk
 					</dd>
 				</div>
 			{%- else -%}
-				{%- set privateCount = privateCount + 1 -%}
+				{%- set unlistedCount = unlistedCount + 1 -%}
 			{%- endif -%}
 		{%- endfor -%}
 	</dl>
 
-	{%- if privateCount > 0 -%}
+	{%- if unlistedCount > 0 -%}
 		<hr>
-		<p><small>There {{ "is" if privateCount == 1 else "are" }} {{ privateCount }} additional private {{ "endpoint" if privateCount == 1 else "endpoints" }} which can be accessed directly. See <a href="{{ pkg.repository.url }}">source repo</a> for URLs.</small></p>
+		<p><small>There {{ "is" if unlistedCount == 1 else "are" }} {{ unlistedCount }} additional unlisted {{ "endpoint" if unlistedCount == 1 else "endpoints" }} which can be accessed directly. See <a href="{{ pkg.repository.url }}">source repo</a> for URLs.</small></p>
 	{%- endif -%}
 </main>
 
