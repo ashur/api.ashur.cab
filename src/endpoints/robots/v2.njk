@@ -2,6 +2,7 @@
 description: User-agent strings for generating `robots.txt` files
 response:
   disallow:
+    - Amazonbot
     - anthropic-ai
     - Applebot-Extended
     - Bytespider
@@ -16,10 +17,15 @@ response:
     - FacebookBot
     - Google-Extended
     - GPTBot
+    - Meta-ExternalAgent
+    - Meta-ExternalFetcher
+    - OAI-SearchBot
     - Omgili
     - Omgilibot
     - PerplexityBot
     - Perplexity-User
+    - Timpibot
+    - YouBot
 version: 2
 ---
 {# v2 uses a new top-level property `disallow`, which opens up the possibility of
